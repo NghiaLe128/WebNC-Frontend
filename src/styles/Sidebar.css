@@ -1,0 +1,104 @@
+:root {
+  --sidebar-width-wide: 230px;
+  --sidebar-width-narrow: 87px;
+  --bg-color-light: #AEEEEE;
+  --bg-color-dark: #2c3e50; /* Dark background color */
+  --text-color-light: #0369a1;
+  --text-color-dark: #ecf0f1; /* Light text color for dark mode */
+}
+
+[data-theme="dark"] {
+  --bg-color-light: #2c3e50;
+  --bg-color-dark: #34495e;
+  --text-color-light: #ecf0f1;
+  --text-color-dark: #1abc9c;
+}
+
+.US {
+  color: var(--text-color-light);
+}
+
+/* Sidebar styles */
+.sidebar {
+  overflow-y: auto;
+  position: fixed;
+  background-color: var(--bg-color-light); /* Use light mode background by default */
+  top: 20px;
+  left: 20px;
+  bottom: 20px;
+  box-shadow: 0 4px 10px rgba(75, 85, 99, 0.5);
+  border-right: 1px solid #d1d5db;
+  border-radius: 1rem;
+  transition: width 0.3s ease-in-out;
+}
+
+[data-theme="dark"] .sidebar {
+  background-color: var(--bg-color-dark); /* Dark mode background */
+}
+
+.sidebar.wide {
+  width: var(--sidebar-width-wide);
+}
+
+.sidebar.narrow {
+  width: var(--sidebar-width-narrow);
+}
+
+.sidebar-top {
+  display: flex;
+  align-items: center;
+  padding: 50px 0 30px 0;
+}
+
+.sidebar-title {
+  display: flex;
+  font-weight: bold;
+  font-size: 1.5rem;
+  min-width: max-content;
+  transition: opacity 0.3s;
+  color: var(--text-color-light); /* Light text color for default mode */
+}
+
+[data-theme="dark"] .sidebar-title {
+  color: var(--text-color-dark); /* Dark mode text color */
+}
+
+.sidebar-title.hidden {
+  display: none;
+}
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 0 1.1rem;
+}
+
+.sidebar-toggle {
+  position: fixed;
+  top: 50%;
+  left: calc(8px + var(--sidebar-width-wide));
+  transition: all 0.3s;
+  transform: translateY(-50%);
+  background-color: #ebebeb;
+  color: black;
+  padding: 0.3rem;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="dark"] .sidebar-toggle {
+  background-color: #7f8c8d; /* Dark mode toggle button */
+  color: #ecf0f1; /* Light text color for dark mode toggle */
+}
+
+.isRight {
+  left: calc(8px + var(--sidebar-width-narrow));
+  rotate: 180deg;
+}
+
+.sidebar.inactive {
+  pointer-events: none;
+  opacity: 0.5;
+}

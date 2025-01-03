@@ -1,0 +1,166 @@
+/* FocusTimer component container */
+.focus-timer-container {
+    text-align: center;
+    margin-top: 50px;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  /* Header styles */
+  .focus-timer-container h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  /* Task input and buttons section */
+  .focus-timer-container .task-controls {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  
+  /* Select and input fields for tasks and durations */
+  .focus-timer-container select,
+  .focus-timer-container input[type="text"],
+  .focus-timer-container input[type="number"] {
+    width: 100%;
+    height: 60px;
+    max-width: 500px;
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    margin-bottom: 10px;
+    transition: border-color 0.3s;
+  }
+  
+  .focus-timer-container select:focus,
+  .focus-timer-container input:focus {
+    border-color: #4caf50;
+    outline: none;
+  }
+
+  .focus-timer-container .row {
+    width: 100%;
+    max-width: 800px;
+    display: flex;
+    gap: 10px;
+  }
+  
+  /* Button styles */
+  .focus-timer-container .save-button {
+    background-color: #ffffff;
+    color: #333;
+    border: #000000;
+    border-style: solid;
+    border-width: 2px;
+    width: 90px;
+    height: 60px;
+    max-width: 300px;
+    padding: 10px;
+  }
+  .focus-timer-container .save-button:hover {
+    color: #48ff00;
+    background-color: white;
+  }
+
+  .focus-timer-container .start-button {
+    background-color: #45a049;
+  }
+  .focus-timer-container .start-button:hover {
+    background-color: #0dff00;
+  }
+
+  .focus-timer-container .stop-button {
+    background-color: #be301ada;
+  }
+  .focus-timer-container .stop-button:hover {
+    background-color: #ff0000;
+  }
+
+  .focus-timer-container .reset-button {
+    background-color: #2196f3;
+  }
+  .focus-timer-container .reset-button:hover {
+    background-color: #005cf1;
+  }
+  
+  .focus-timer-container button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 100%;
+    max-width: 150px;
+  }
+  
+  .focus-timer-container button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+  
+  /* Task name and timer display */
+  .focus-timer-container h2 {
+    font-size: 1.5rem;
+    color: #444;
+    margin-bottom: 10px;
+  }
+  
+  .focus-timer-container h3 {
+    font-size: 1.25rem;
+    margin-bottom: 20px;
+  }
+  
+  /* Timer progress bar */
+  .focus-timer-container .timer-bar {
+    width: 100%;
+    height: 10px;
+    background: #ddd;
+    margin: 20px 0;
+    border-radius: 5px;
+    position: relative;
+  }
+  
+  /* Progress bar inside timer bar */
+  .focus-timer-container .timer-progress {
+    height: 10px;
+    background: #4caf50;
+    border-radius: 5px;
+  }
+  
+  /* Mobile responsiveness */
+  @media screen and (max-width: 600px) {
+    .focus-timer-container {
+      width: 90%;
+      padding: 15px;
+    }
+  
+    .focus-timer-container h1 {
+      font-size: 2rem;
+    }
+  
+    .focus-timer-container h2 {
+      font-size: 1.25rem;
+    }
+  
+    .focus-timer-container h3 {
+      font-size: 1rem;
+    }
+  
+    .focus-timer-container button {
+      max-width: 100%;
+    }
+  }
+  

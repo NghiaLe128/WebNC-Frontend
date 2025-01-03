@@ -1,0 +1,91 @@
+/* SidebarMenuGroup.css */
+.menu-group-title {
+  padding-top: 1.2rem; /* py-4 */
+  padding-bottom: 0.5rem; /* py-4 */
+  letter-spacing: 0.1rem; /* tracking-[.1rem] */
+  font-weight: 500; /* font-medium */
+  text-transform: uppercase; /* uppercase */
+  font-size: 0.75rem; /* text-xs */
+  color: #383c43; /* text-gray-500 */
+  transition: all 0.3s; /* transition duration-300 */
+}
+
+[data-theme='dark'] .menu-group-title {
+  color: #e2e8f0; /* text-gray-200 for dark mode */
+}
+
+.menu-group-title-centered {
+  text-align: center; /* text-center */
+}
+
+/* SidebarMenuItem.css */
+.inactive-link {
+  display: flex;
+  align-items: center;
+  min-height: 40px;
+  height: 100%;
+  padding: 0.5rem 1rem;
+  border-radius: 1rem;
+  transition: all 0.2s ease-in-out;
+  color: #000000;
+}
+
+[data-theme='dark'] .inactive-link {
+  color: #e2e8f0; /* text-gray-200 for dark mode */
+}
+
+.inactive-link:hover {
+  color: #ffffff;
+  background-color: #48d1cc;
+  transform: scale(1.05);
+}
+
+[data-theme='dark'] .inactive-link:hover {
+  background-color: #4f9f9f; /* Darker shade for dark mode */
+}
+
+.active-link {
+  background-color: #008b8b;
+  color: #ffffff;
+}
+
+[data-theme='dark'] .active-link {
+  background-color: #40a4a4; /* Lighter shade for active link in dark mode */
+}
+
+.menu-container {
+  min-width: 18px;
+}
+
+.icon-container {
+  min-width: 20px;
+}
+
+.menu-title {
+  margin-left: 0.75rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #f87171;
+}
+
+[data-theme='dark'] .menu-title {
+  color: #fbd38d; /* Light color for menu title in dark mode */
+}
+
+.rotate-icon {
+  transform: rotate(90deg);
+}
+
+.icon-spacing {
+  margin-left: auto;
+  font-size: 0.75rem;
+}
+
+.inactive-text {
+  font-size: 16.2px;
+  margin-left: 0.75rem;
+}
+
+[data-theme='dark'] .inactive-text {
+  color: #e2e8f0; /* Light color for inactive text in dark mode */
+}
