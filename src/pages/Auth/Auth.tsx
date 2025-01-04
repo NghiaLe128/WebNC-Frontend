@@ -21,7 +21,7 @@ const Auth: React.FC = () => {
   const handleSignUp = async () => {
     navigate("/verify-email", { state: formData });
     /*try {
-      const response = await axios.post(`http://localhost:4000/user/register`, {
+      const response = await axios.post(`https://web-backend-delta.vercel.app/user/register`, {
         username: formData.username,
         email: formData.email,
         password: formData.password,
@@ -61,7 +61,7 @@ const Auth: React.FC = () => {
 
   const handleSignIn = async () => {
     try {
-      const response = await axios.post(`http://localhost:4000/user/login`, {
+      const response = await axios.post(`https://web-backend-delta.vercel.app/user/login`, {
         email: formData.email,
         password: formData.password,
       });
@@ -75,7 +75,7 @@ const Auth: React.FC = () => {
         // Call API to update expired tasks
         try {
           await axios.put(
-            `http://localhost:4000/task/update-expired-tasks/${user_id}`,
+            `https://web-backend-delta.vercel.app/task/update-expired-tasks/${user_id}`,
             {},
             {
               headers: {
@@ -128,7 +128,7 @@ const Auth: React.FC = () => {
 
   const handleGoogleLogin = () => {
     // Redirect the user to the Google OAuth endpoint
-    window.location.href = `http://localhost:4000/user/auth/google`;
+    window.location.href = `https://web-backend-delta.vercel.app/user/auth/google`;
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {

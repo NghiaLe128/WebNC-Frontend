@@ -101,7 +101,7 @@ const TaskDetails: React.FC<TaskDetailsProps> = ({
       try {
         // API call to save the task
         const response = await axios.put(
-          `http://localhost:4000/task/updateTasks/${task.id}`,
+          `https://web-backend-delta.vercel.app/task/updateTasks/${task.id}`,
           formattedData,
           {
             headers: {
@@ -147,7 +147,7 @@ const TaskDetails: React.FC<TaskDetailsProps> = ({
         try {
           // API call to delete the task
           const response = await axios.delete(
-            `http://localhost:4000/task/deleteTasks/${task.id}`,
+            `https://web-backend-delta.vercel.app/task/deleteTasks/${task.id}`,
             {
               headers: {
                 Authorization: `Bearer ${localStorage.getItem("token")}`, // Include Bearer token
@@ -226,7 +226,7 @@ const TaskDetails: React.FC<TaskDetailsProps> = ({
 
     try {
       const response = await axios.post(
-        `http://localhost:4000/task/suggest`,
+        `https://web-backend-delta.vercel.app/task/suggest`,
         {
           curTask,
           Tasks

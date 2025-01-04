@@ -113,7 +113,7 @@ const NewTask: React.FC<NewTaskProps> = ({ Tasks, onAddTask, onClose }) => {
 
     try {
       const response = await axios.post(
-        `http://localhost:4000/task/createTasks/${userId}`,
+        `https://web-backend-delta.vercel.app/task/createTasks/${userId}`,
         formattedData,
         {
           headers: {
@@ -202,7 +202,7 @@ const NewTask: React.FC<NewTaskProps> = ({ Tasks, onAddTask, onClose }) => {
 
     try {
       const response = await axios.post(
-        `http://localhost:4000/task/suggest`,
+        `https://web-backend-delta.vercel.app/task/suggest`,
         {
           curTask,
           Tasks,

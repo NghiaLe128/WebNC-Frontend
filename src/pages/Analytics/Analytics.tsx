@@ -134,7 +134,7 @@ const AnalyticsPage = () => {
         try {
             const token = localStorage.getItem("token"); // Get the Bearer token
             const response = await axios.get(
-                `http://localhost:4000/task/daily-time-spent/${userId}?startDate=${startDate}`,
+                `https://web-backend-delta.vercel.app/task/daily-time-spent/${userId}?startDate=${startDate}`,
                 {
                     headers: {
                         Authorization: `Bearer ${token}`, // Add the Authorization header
@@ -167,7 +167,7 @@ const AnalyticsPage = () => {
         try {
             const token = localStorage.getItem("token"); // Get the Bearer token
             const response = await axios.get(
-                `http://localhost:4000/task/task-status/${userId}`,
+                `https://web-backend-delta.vercel.app/task/task-status/${userId}`,
                 {
                     headers: {
                         Authorization: `Bearer ${token}`, // Add the Authorization header
@@ -197,7 +197,7 @@ const AnalyticsPage = () => {
         try {
             const token = localStorage.getItem("token"); // Get the Bearer token
             const response = await axios.post(
-                `http://localhost:4000/task/ai-feedback/${userId}`,
+                `https://web-backend-delta.vercel.app/task/ai-feedback/${userId}`,
                 {},
                 {
                     headers: {
@@ -277,7 +277,7 @@ const AnalyticsPage = () => {
                 // Pass the userId in the URL
                 const token = localStorage.getItem("token"); // Get the Bearer token from local storage
                 const response = await axios.get(
-                    `http://localhost:4000/task/dashboard/${userId}`,
+                    `https://web-backend-delta.vercel.app/task/dashboard/${userId}`,
                     {
                         headers: {
                             Authorization: `Bearer ${token}`, // Include the Authorization header

@@ -38,7 +38,7 @@ const ProFilePage: React.FC = () => {
 
       try {
         const response = await axios.get(
-          `http://localhost:4000/user/profile/${userId}`,
+          `https://web-backend-delta.vercel.app/user/profile/${userId}`,
           {
             headers: {
               Authorization: `Bearer ${accessToken}`,
@@ -77,7 +77,7 @@ const ProFilePage: React.FC = () => {
     }
     try {
       const response = await axios.get(
-        `http://localhost:4000/user/profile/${userId}`,
+        `https://web-backend-delta.vercel.app/user/profile/${userId}`,
         {
           headers: {
             Authorization: `Bearer ${accessToken}`,
@@ -120,7 +120,7 @@ const ProFilePage: React.FC = () => {
     try {
       // Sending the request to update the avatar on the server
       const response = await axios.post(
-        `http://localhost:4000/user/upload-avatar/${userId}`, // Ensure the URL is correct
+        `https://web-backend-delta.vercel.app/user/upload-avatar/${userId}`, // Ensure the URL is correct
         formData,
         {
           headers: {

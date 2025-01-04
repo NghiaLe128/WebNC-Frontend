@@ -21,7 +21,7 @@ const VerifyEmail = () => {
     if (!emailSent) {
       const FetchVerifyCode = async () => {
         try {
-          const response = await axios.post(`http://localhost:4000/user/verify-email`, { email });
+          const response = await axios.post(`https://web-backend-delta.vercel.app/user/verify-email`, { email });
           setMessage(response.data.message);
 
           if (response.status === 200) {
@@ -70,12 +70,12 @@ const VerifyEmail = () => {
   const handleSignUp = async () => {
     const codeInput = code.join('');
     try {
-      const response = await axios.post(`http://localhost:4000/user/verify-email-code`, { email, code: codeInput });
+      const response = await axios.post(`https://web-backend-delta.vercel.app/user/verify-email-code`, { email, code: codeInput });
       setMessage(response.data.message);
       if (response.status === 200) {
         //If code is correct => begin creating a new account
         try {
-          const response = await axios.post(`http://localhost:4000/user/register`, {
+          const response = await axios.post(`https://web-backend-delta.vercel.app/user/register`, {
             username: formData.username,
             email: formData.email,
             password: formData.password,

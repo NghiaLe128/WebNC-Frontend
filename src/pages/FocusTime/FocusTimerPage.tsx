@@ -61,7 +61,7 @@ function FocusTimer() {
     try {
       const token = localStorage.getItem("token"); // Get the Bearer token
       const response = await axios.post(
-        `http://localhost:4000/task/suggest-focus-time/${userId}`,
+        `https://web-backend-delta.vercel.app/task/suggest-focus-time/${userId}`,
         {},
         {
           headers: {
@@ -92,7 +92,7 @@ function FocusTimer() {
       try {
         const token = localStorage.getItem("token"); // Retrieve the token from localStorage
         const response = await axios.get(
-          `http://localhost:4000/task/getOptionTasks/${userId}`,
+          `https://web-backend-delta.vercel.app/task/getOptionTasks/${userId}`,
           {
             headers: {
               Authorization: `Bearer ${token}`, // Include the Bearer token in the header
@@ -234,7 +234,7 @@ function FocusTimer() {
     const updateExpiredTasks = async () => {
       try {
         await axios.put(
-          `http://localhost:4000/task/update-expired-tasks/${userId}`,
+          `https://web-backend-delta.vercel.app/task/update-expired-tasks/${userId}`,
           {},
           {
             headers: {
@@ -312,7 +312,7 @@ function FocusTimer() {
       const token = localStorage.getItem("token");
 
       await axios.put(
-        `http://localhost:4000/task/updateTasks/${Cur_Task.id}`,
+        `https://web-backend-delta.vercel.app/task/updateTasks/${Cur_Task.id}`,
         {
           status: newStatus,
           startDate: Cur_Task.start,

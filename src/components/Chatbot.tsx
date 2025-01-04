@@ -40,7 +40,7 @@ export default function Chatbot() {
 
         // Gửi câu hỏi đến API backend với userId trong URL
         const response = await axios.post(
-          `http://localhost:4000/task/chatbot-ask/${userId}`,
+          `https://web-backend-delta.vercel.app/task/chatbot-ask/${userId}`,
           { question: inputValue.trim() },
           {
             headers: {
@@ -102,7 +102,7 @@ export default function Chatbot() {
 
       try {
         const response = await axios.get(
-          `http://localhost:4000/user/profile/${userId}`,
+          `https://web-backend-delta.vercel.app/user/profile/${userId}`,
           {
             headers: {
               Authorization: `Bearer ${accessToken}`,

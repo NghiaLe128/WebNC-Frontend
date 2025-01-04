@@ -47,7 +47,7 @@ const EditProfile: React.FC<EditProfileProps> = ({
 
     try {
       const response = await axios.put(
-        `http://localhost:4000/user/update-user/${userData.userId}`,
+        `https://web-backend-delta.vercel.app/user/update-user/${userData.userId}`,
         updatedUserData,
         {
           headers: {
@@ -91,7 +91,7 @@ const EditProfile: React.FC<EditProfileProps> = ({
     e.preventDefault();
     try {
       const response = await axios.post(
-        `http://localhost:4000/user/forgot-password`,
+        `https://web-backend-delta.vercel.app/user/forgot-password`,
         { email }
       );
       setMessage(response.data.message);
@@ -126,7 +126,7 @@ const EditProfile: React.FC<EditProfileProps> = ({
     const codeInput = code.join("");
     try {
       const response = await axios.post(
-        `http://localhost:4000/user/verify-code`,
+        `https://web-backend-delta.vercel.app/user/verify-code`,
         { email, code: codeInput }
       );
       setMessage(response.data.message);
@@ -150,7 +150,7 @@ const EditProfile: React.FC<EditProfileProps> = ({
     setIsCountdownActive(true);
     try {
       const response = await axios.post(
-        `http://localhost:4000/user/reset-password`,
+        `https://web-backend-delta.vercel.app/user/reset-password`,
         { email }
       );
       setMessage(response.data.message);
@@ -181,7 +181,7 @@ const EditProfile: React.FC<EditProfileProps> = ({
     }
     try {
       const response = await axios.post(
-        `http://localhost:4000/user/reset-password`,
+        `https://web-backend-delta.vercel.app/user/reset-password`,
         updatedPassword,
         {
           headers: {

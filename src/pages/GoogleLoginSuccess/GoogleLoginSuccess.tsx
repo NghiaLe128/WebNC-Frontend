@@ -16,7 +16,7 @@ const GoogleLoginSuccess: React.FC = () => {
   const handleSetPassword = async () => {
     try {
       const response = await axios.post(
-        `http://localhost:4000/user/update-password`,
+        `https://web-backend-delta.vercel.app/user/update-password`,
         {
           email,
           username,

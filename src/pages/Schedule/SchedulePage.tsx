@@ -102,7 +102,7 @@ export default function Schedule() {
       try {
         const token = localStorage.getItem("token"); // Retrieve the token from localStorage
         const response = await axios.get(
-          `http://localhost:4000/task/getOptionTasks/${userId}`,
+          `https://web-backend-delta.vercel.app/task/getOptionTasks/${userId}`,
           {
             headers: {
               Authorization: `Bearer ${token}`, // Include the Bearer token in the header
@@ -143,7 +143,7 @@ export default function Schedule() {
     const updateExpiredTasks = async () => {
       try {
         await axios.put(
-          `http://localhost:4000/task/update-expired-tasks/${userId}`,
+          `https://web-backend-delta.vercel.app/task/update-expired-tasks/${userId}`,
           {},
           {
             headers: {
@@ -215,7 +215,7 @@ export default function Schedule() {
     try {
       const token = localStorage.getItem("token");
       await axios.put(
-        `http://localhost:4000/task/updateTasks/${event.id}`,
+        `https://web-backend-delta.vercel.app/task/updateTasks/${event.id}`,
         {
           status: newStatus,
           startDate: newStartDate.toISOString(),
@@ -306,7 +306,7 @@ export default function Schedule() {
       if (result.isConfirmed) {
         try {
           // API call to delete the task
-          const response = await axios.delete(`http://localhost:4000/task/deleteTasks/${event.id}`, {
+          const response = await axios.delete(`https://web-backend-delta.vercel.app/task/deleteTasks/${event.id}`, {
             headers: {
               Authorization: `Bearer ${localStorage.getItem("token")}`, // Include Bearer token
             },
@@ -344,7 +344,7 @@ export default function Schedule() {
     console.log(error)
     try {
       const response = await axios.post(
-        `http://localhost:4000/task/analyze-schedule`,
+        `https://web-backend-delta.vercel.app/task/analyze-schedule`,
         { calendarEvents },
         {
           headers: {

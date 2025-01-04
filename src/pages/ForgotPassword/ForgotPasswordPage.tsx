@@ -31,7 +31,7 @@ const ForgotPassword = () => {
   const handleEmailSubmit = async (e: any) => {
     e.preventDefault();
     try {
-      const response = await axios.post(`http://localhost:4000/user/forgot-password`, { email });
+      const response = await axios.post(`https://web-backend-delta.vercel.app/user/forgot-password`, { email });
       setMessage(response.data.message);
       if (response.status === 200) {
         setStep('code');
@@ -61,7 +61,7 @@ const ForgotPassword = () => {
     e.preventDefault();
     const codeInput = code.join('');
     try {
-      const response = await axios.post(`http://localhost:4000/user/verify-code`, { email, code: codeInput });
+      const response = await axios.post(`https://web-backend-delta.vercel.app/user/verify-code`, { email, code: codeInput });
       setMessage(response.data.message);
       if (response.status === 200) {
         setStep('password'); // Move to password input step
@@ -80,7 +80,7 @@ const ForgotPassword = () => {
     setCountdown(60);
     setIsCountdownActive(true);
     try {
-      const response = await axios.post(`http://localhost:4000/user/forgot-password`, { email });
+      const response = await axios.post(`https://web-backend-delta.vercel.app/user/forgot-password`, { email });
       setMessage(response.data.message);
     } catch (error: any) {
       setMessage(error.response?.data?.message || 'Something went wrong. Please try again.');
@@ -99,7 +99,7 @@ const ForgotPassword = () => {
 
     try {
       // Gửi yêu cầu API để reset mật khẩu
-      const response = await axios.post(`http://localhost:4000/user/reset-password`, {
+      const response = await axios.post(`https://web-backend-delta.vercel.app/user/reset-password`, {
         email,
         newPassword,
       });

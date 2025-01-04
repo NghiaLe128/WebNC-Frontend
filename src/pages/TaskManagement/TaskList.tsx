@@ -42,7 +42,7 @@ const TaskList: React.FC = () => {
     const fetchTasks = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:4000/task/getOptionTasks/${userId}`,
+          `https://web-backend-delta.vercel.app/task/getOptionTasks/${userId}`,
           {
             headers: {
               Authorization: `Bearer ${localStorage.getItem("token")}`, // Include Bearer token
@@ -84,7 +84,7 @@ const TaskList: React.FC = () => {
     const updateExpiredTasks = async () => {
       try {
         await axios.put(
-          `http://localhost:4000/task/update-expired-tasks/${userId}`,
+          `https://web-backend-delta.vercel.app/task/update-expired-tasks/${userId}`,
           {},
           {
             headers: {
